@@ -1,7 +1,7 @@
 import cv2
 
-img_path = 'D:\KI 2 NAM HOC 2022-2023\Ban_quyen_so\Code\Watermark\original_picture.jpg'
-watermark_path = 'D:\KI 2 NAM HOC 2022-2023\Ban_quyen_so\Code\Watermark\Test_1.png'
+img_path = 'Original_img.jpg'
+watermark_path = 'Watermark.png'
 
 img = cv2.imread(img_path)
 watermark = cv2.imread(watermark_path)
@@ -37,8 +37,8 @@ result = cv2.addWeighted(roi, 1, resized_watermark, 0.3, 0)
 # cv2.destroyAllWindows()
 resized_img[top_y:bottom_y, left_x:right_x] = result
 
-output_path = 'D:\\KI 2 NAM HOC 2022-2023\\Ban_quyen_so\\Code\\Watermark\\'
-output_filename = 'TestOutput.jpg'
+output_path = ''
+output_filename = 'Watermarked_img.jpg'
 cv2.imwrite(output_path + output_filename, resized_img)
 cv2.imshow("Output", resized_img)
 cv2.waitKey(0)
