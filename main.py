@@ -1,7 +1,7 @@
 import cv2
 
-img_path = 'Original_img.jpg'
-watermark_path = 'Watermark.png'
+img_path = 'original_picture.jpg'
+watermark_path = 'watermark.png'
 
 img = cv2.imread(img_path)
 watermark = cv2.imread(watermark_path)
@@ -13,7 +13,7 @@ new_img_height = int(img.shape[0] * img_scale/100)
 new_img_dimension = (new_img_width, new_img_height)
 resized_img = cv2.resize(img, new_img_dimension, interpolation=cv2.INTER_AREA)
 
-watermark_scale = 100
+watermark_scale = 50
 
 new_watermark_width = int(watermark.shape[1] * watermark_scale/100)
 new_watermark_height = int(watermark.shape[0] * watermark_scale/100)
